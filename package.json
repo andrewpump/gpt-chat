@@ -1,0 +1,22 @@
+{
+  "name": "chat-gpt-web-widget",
+  "version": "1.0.0",
+  "description": "A chat web widget for open ai GPT api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewpump/gpt-chat.git"
+  },
+  "keywords": [
+    "chatgpt"
+  ],
+  "author": "Andrew Hamilton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewpump/gpt-chat/issues"
+  },
+  "homepage": "https://github.com/andrewpump/gpt-chat#readme"
+}
