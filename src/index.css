@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-/* Vertically and horizonally center test in this div and create fancy striped placeholder background*/
 .main-background {
   display: flex;
   justify-content: center;
