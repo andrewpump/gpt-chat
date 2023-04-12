@@ -53,6 +53,7 @@ const AiAssistant = ({ itemList, color, image }) => {
     }
   };
 
+
   return (
     <div className="ai-assistant-main-container">
       <Button

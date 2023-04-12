@@ -3,7 +3,9 @@
   margin-bottom: 12px;
   overflow: scroll;
   overflow-x: hidden;
-  animation: animateOpen 0.5s;
+  // animation: animateOpen 0.5s;
+  transition: height 20s;
+  transition-timing-function: linear;
 
   @keyframes animateOpen {
     from {
