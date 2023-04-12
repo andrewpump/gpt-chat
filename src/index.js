@@ -22,13 +22,11 @@ const getListItem = [
 
 root.render(
   <React.StrictMode>
-    <div>
-      <AiAssistant label="Button Label" itemList={getListItem} 
-      // color="#FF0000"
-      color="#7b6cf3" 
-      image={DemoImage}
-      />
-      <Text label="Text Label" />
+    <div className="main-background">
+      <AiAssistant label="Button Label" itemList={getListItem} color="#7b6cf3" image={DemoImage} />
+      <h1>
+        BOPS React web app in this background area!
+      </h1>
     </div>
   </React.StrictMode>
 );
