@@ -13,7 +13,6 @@
   }
   .main-popup-container {
     position: absolute;
-    height: 250px;
     bottom: 95px;
     width: 436px;
     right: 0px;
@@ -24,11 +23,11 @@
     flex-direction: column;
     background-color: white;
     overflow: hidden;
-    animation: mymove 0.5s;
+    // animation: mymove 0.5s;
   }
   .main-popup-container-animate-start {
     @extend .main-popup-container;
-    height: 250px;
+    height: auto;
     animation: mymove 0.5s;
   }
 
@@ -37,7 +36,7 @@
     height: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
-    animation: mymove2 0.5s;
+    animation: mymove2 5s;
   }
 
   @keyframes mymove {
@@ -45,12 +44,12 @@
       height: 0px;
     }
     to {
-      height: 250px;
+      height: auto;
     }
   }
   @keyframes mymove2 {
     from {
-      height: 250px;
+      height: auto;
     }
     to {
       height: 0px;
@@ -121,6 +120,7 @@
   }
 
   .main-item-list-container {
+    max-height: 711px;
     overflow-y: scroll;
     overflow-x: hidden;
     display: flex;

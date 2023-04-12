@@ -8,7 +8,7 @@ import Text from "../../../components/text";
 import "../../../assets/styles/styles.scss";
 import "./styles.scss";
 
-const ItemDetail = forwardRef(({color}, ref) => {
+const ItemDetail = forwardRef(({ color, id }, ref) => {
   const refForDiv = useRef();
   useImperativeHandle(ref, () => ({
     log() {
@@ -19,9 +19,16 @@ const ItemDetail = forwardRef(({color}, ref) => {
     },
   }));
   return (
-    <div ref={refForDiv}   style={{backgroundColor: `${color}18`}} className={"ai-assistant-item-details-main-container"}>
+    <div 
+      ref={refForDiv}
+      style={{ backgroundColor: `${color}18` }}
+      className={"ai-assistant-item-details-main-container"}
+    >
       <div className="ai-assistant-item-details-container">
-        <div style={{borderBottomColor: color}} className="ai-assistant-item-details-heading-text-container ">
+        <div
+          style={{ borderBottomColor: color }}
+          className="ai-assistant-item-details-heading-text-container "
+        >
           <Text className="title-text-style" label="Purchase More:" />
           <Text
             className="subtitle-text-style"

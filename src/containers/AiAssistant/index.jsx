@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Text from "../../components/text";
 import Button from "../../components/button";
 import ListItem from "./listItem";
@@ -7,10 +7,12 @@ import CrossIcon from "../../assets/icons/crossIcon";
 import InsightsIcon from "../../assets/icons/insightsIcon";
 import ArrowRightIcon from "../../assets/icons/arrowRightIcon";
 import "./styles.scss";
+import EnvironmentError from "../../components/environmentError";
 
 const AiAssistant = ({ itemList, color, image }) => {
   const [showPopUp, setShowPopUp] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [showEnvError, setShowEnvError] = useState(false);
 
   const ref = useRef();
   const refPopUp = useRef();
@@ -19,7 +21,6 @@ const AiAssistant = ({ itemList, color, image }) => {
   const onClickList = () => {
     setShowDetails(true);
   };
-
   const onClickPopupButton = () => {
     setShowDetails(false);
     if (showPopUp) {
@@ -68,7 +69,9 @@ const AiAssistant = ({ itemList, color, image }) => {
         }
       />
       {showPopUp && (
-        <div ref={refPopUp} className="main-popup-container-animate-start">
+        <div ref={refPopUp} id="tunnel" className="main-popup-container-animate-start">
+          {/* Make showEnvError as true to make EnvironmentError Visible */}
+          {showEnvError && <EnvironmentError color={color} />}
           <div
             className="popup-header-container"
             style={{ borderBottomColor: color }}
@@ -86,9 +89,16 @@ const AiAssistant = ({ itemList, color, image }) => {
               <Text className="header-text-style" label="Bops Insight" />
             </div>
           </div>
-          <div className="main-item-list-container">
+          <div
+            className="main-item-list-container"
+          >
             {showDetails ? (
-              <ItemDetail ref={ref} showDetails={showDetails} color={color} />
+              <ItemDetail
+                id="detailif"
+                ref={ref}
+                showDetails={showDetails}
+                color={color}
+              />
             ) : (
               itemList.map((item, index) => (
                 <ListItem
