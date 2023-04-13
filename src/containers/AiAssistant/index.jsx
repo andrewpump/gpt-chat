@@ -64,7 +64,6 @@ const AiAssistant = ({ itemList, color, image }) => {
           showPopUp ? (
             <CrossIcon color="#ffffff" />
           ) : (
-            // <InsightsIcon color="#ffffff" />
             <img src={image} alt="img" width="32px" height="32px" />
           )
         }
