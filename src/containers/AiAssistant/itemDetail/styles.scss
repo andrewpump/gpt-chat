@@ -3,16 +3,15 @@
   margin-bottom: 12px;
   overflow: scroll;
   overflow-x: hidden;
-  // animation: animateOpen 0.5s;
-  transition: height 20s;
-  transition-timing-function: linear;
-
+  animation: animateOpen 0.5s;
+  transform-origin: top;
+  animation-timing-function: ease-in;
   @keyframes animateOpen {
     from {
-      height: 0%;
+      transform: scaleY(0);
     }
     to {
-      height: 100%;
+      transform: scaleY(1);
     }
   }
   -ms-overflow-style: none; /* IE and Edge */
@@ -27,13 +26,14 @@
   overflow: scroll;
   overflow-x: hidden;
   animation: animateClose 0.5s;
-
+  transform-origin: top;
+  animation-timing-function: ease;
   @keyframes animateClose {
     from {
-      height: 100%;
+      transform: scaleY(1);
     }
     to {
-      height: 25%;
+      transform: scaleY(0);
     }
   }
   -ms-overflow-style: none; /* IE and Edge */

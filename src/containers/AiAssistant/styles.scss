@@ -23,7 +23,6 @@
     flex-direction: column;
     background-color: white;
     overflow: hidden;
-    // animation: mymove 0.5s;
     // transition:transform 3s ease-out;
     // transform:scaleY(1);
   }
@@ -31,6 +30,8 @@
     @extend .main-popup-container;
     height: auto;
     animation: mymove 0.5s;
+    transform-origin: bottom;
+    animation-timing-function: ease;
   }
 
   .main-popup-container-animate-end {
@@ -38,23 +39,29 @@
     height: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
-    animation: mymove2 5s;
+    animation: mymove2 0.4s;
+    transform-origin: bottom;
+    animation-timing-function: ease-out;
   }
 
   @keyframes mymove {
     from {
       height: 0px;
+      transform: scaleY(0);
     }
     to {
       height: auto;
+      transform: scaleY(1);
     }
   }
   @keyframes mymove2 {
     from {
       height: auto;
+      transform: scaleY(1);
     }
     to {
       height: 0px;
+      transform: scaleY(0);
     }
   }
 
@@ -128,6 +135,8 @@
     display: flex;
     flex-direction: column;
     padding-top: 12px;
+    transition:transform 3s ease-out;
+    transform:scaleY(1);
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
